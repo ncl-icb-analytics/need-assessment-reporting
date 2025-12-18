@@ -1,8 +1,8 @@
-# West and North London 
-
+# West and North London
 
 ## Repository Structure
 
+```         
 .
 ├── _quarto.yml           # Quarto project configuration
 ├── index.qmd             # Homepage
@@ -12,9 +12,10 @@
   └── images/ 
 ├── reports/              # Different report projects (qmd)
 └── README.md
-
+```
 
 ## Configuration
-_quarto.yml
+
+\_quarto.yml
 
 ## GitHub Pages Setup
