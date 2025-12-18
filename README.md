@@ -3,6 +3,7 @@
 
 ## Repository Structure
 
+.
 ├── _quarto.yml           # Quarto project configuration
 ├── index.qmd             # Homepage
 ├── WNL_report_theme.css  # Report styling
