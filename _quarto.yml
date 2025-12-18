@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "West and North London Reports"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Reports
+        menu:
+          - reports/nwl_ina_2025/ina_2025.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: WNL_report_theme.css
