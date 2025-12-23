@@ -1,4 +1,6 @@
-# West and North London
+# West and North London ICB Reports
+
+This repository is used for publishing West and North London ICB reports. This allows reports to be interative and easily shared within and out of the ICB.
 
 ## Repository Structure
 
@@ -19,3 +21,5 @@
 \_quarto.yml
 
 ## GitHub Pages Setup
+
+This repository is dual licensed under the Open Government v3 & MIT. All code can outputs are subject to Crown Copyright.
