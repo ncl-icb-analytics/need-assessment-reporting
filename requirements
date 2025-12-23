@@ -1,0 +1,9 @@
+# Requirements for this project
+
+R version 4.4.2 (2024-10-31 ucrt)
+
+# src
+src/geography_functions.R requires pathfiles to where look up files for geographic data is stored
+
+# reports data 
+All reports will require a data folder that is stored locally
