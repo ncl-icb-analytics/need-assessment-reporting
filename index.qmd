@@ -46,5 +46,5 @@ format:
 
 ## Available Reports
 
-- [North West London Health Needs Assessment 2025](docs/reports/nwl_ina_2025/ina_2025.html)
+- [North West London Health Needs Assessment 2025](reports/nwl_ina_2025/ina_2025.html)
 
