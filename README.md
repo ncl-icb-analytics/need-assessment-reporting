@@ -9,10 +9,13 @@ This repository is used for publishing West and North London ICB reports. This a
 ├── _quarto.yml           # Quarto project configuration
 ├── index.qmd             # Homepage
 ├── WNL_report_theme.css  # Report styling
-├── _site/                # Rendered site output (published to GitHub Pages)
+├── docs/                 # Rendered site output (published to GitHub Pages)
 ├── assets
   └── images/ 
 ├── reports/              # Different report projects (qmd)
+  └── project/ 
+    └── project.qmd       #Each project has a qmd file and data file
+    └── data/
 └── README.md
 ```
 
@@ -21,5 +24,9 @@ This repository is used for publishing West and North London ICB reports. This a
 \_quarto.yml
 
 ## GitHub Pages Setup
+
+Everything in docs/ is deployed from the main branch.
+
+## Licensing 
 
 This repository is dual licensed under the Open Government v3 & MIT. All code can outputs are subject to Crown Copyright.
