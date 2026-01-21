@@ -74,7 +74,7 @@ ingest_shape_date <- function(geography, filter_codes, all_codes) {
       dplyr::left_join(all_codes, by=c("msoa11cd")) %>% 
       dplyr::filter(msoa11cd %in% filter_codes)
   }
-  C:/need-assessment-reporting/src/src_data
+
   if (geography=="lad") {
   shape <- sf::st_read(here("src/src_data/Local_Authority_Districts__May_2020__Boundaries_UK_BFE.shp"),  quiet = TRUE) %>% 
     janitor::clean_names() %>% 
