@@ -65,9 +65,9 @@ callout-appearance: default
 ## Packages and src
 pacman::p_load(dplyr, janitor,ggplot2, fingertipsR, leaflet, sf, gt, gtExtras, plotly, purrr, readr, patchwork, flextable, reactable, grid)
 #flextable, kable
-source("../../src/data_cleaning.R")
-source("../../src/plot_theme.R")
-source("../../src/geography_functions.R")
+source("src/data_cleaning.R")
+source("src/plot_theme.R")
+source("src/geography_functions.R")
 
 #output_path <- "C:/nwlicb/outputs/health_equity_outcomes/"
 
