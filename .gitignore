@@ -27,6 +27,12 @@ _freeze/
 /data/
 /output/
 
+/reports/*/data/*
+!/reports/*/data/.gitkeep
+
+/src/src_data/*
+!/src/src_data/.gitkeep
+
 # Exclude data file types
 *.doc
 *.docx
