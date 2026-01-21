@@ -49,6 +49,11 @@ _freeze/
 *.rds
 
 *_cache/
+*.shp
+*.cpg
+*.dbf
+*.prj
+*.shx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
