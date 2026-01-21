@@ -7,13 +7,23 @@
 .quarto
 .Renviron
 
+#Revn
+library/
+local/
+cellar/
+lock/
+python/
+sandbox/
+staging/
+
+
 # Quarto
 _quarto/
 _cache/
 _freeze/
 
 
-# Exclude the following directories 
+# Exclude the following directories
 /data/
 /output/
 
@@ -179,3 +189,5 @@ cython_debug/
 # VS Code project files
 .vscode/
 
+
+/.quarto/
