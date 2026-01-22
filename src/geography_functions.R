@@ -76,7 +76,7 @@ ingest_shape_date <- function(geography, filter_codes, all_codes) {
   }
 
   if (geography=="lad") {
-  shape <- sf::st_read(here("src/src_data/Local_Authority_Districts__May_2020__Boundaries_UK_BFE.shp"),  quiet = TRUE) %>% 
+  shape <- sf::st_read(here("src/src_data/LAD_DEC_2020_UK_BFE.shp"),  quiet = TRUE) %>% 
     janitor::clean_names() %>% 
     dplyr::filter(lad20cd %in% filter_codes)
   }
