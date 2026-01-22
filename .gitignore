@@ -15,7 +15,8 @@ lock/
 python/
 sandbox/
 staging/
-
+docs/*
+!docs/reports/*
 
 # Quarto
 _quarto/
