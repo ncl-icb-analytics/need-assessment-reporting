@@ -63,11 +63,13 @@ callout-appearance: default
 #| echo: false
 #| error: false
 ## Packages and src
-pacman::p_load(dplyr, janitor,ggplot2, fingertipsR, leaflet, sf, gt, gtExtras, plotly, purrr, readr, patchwork, flextable, reactable, grid)
+pacman::p_load(dplyr, here, janitor,ggplot2, fingertipsR, leaflet, sf, gt, gtExtras, plotly, purrr, readr, patchwork, flextable, reactable, grid)
+
+knitr::opts_knit$set(root.dir = here::here())
 #flextable, kable
-source("../../src/data_cleaning.R")
-source("../../src/plot_theme.R")
-source("../../src/geography_functions.R")
+source("src/data_cleaning.R")
+source("src/plot_theme.R")
+source("src/geography_functions.R")
 
 #output_path <- "C:/nwlicb/outputs/health_equity_outcomes/"
 
@@ -104,13 +106,13 @@ qual_cols <- c("#4B429B","#2A90C0","#F9A50E","#F24678","#539A3E", "#853E9A", "#C
 #| message: false
 #| warning: false
 #| include: false
-folder_path <- "data/demographics/"
+folder_path <- "reports/nwl_ina_2025/data/demographics/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 demographics_list <- map(csv_files, read_csv)
 names(demographics_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-folder_path <- "data/activity/"
+folder_path <- "reports/nwl_ina_2025/data/activity/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 activity_list_a <- map(csv_files, read_csv)
@@ -126,56 +128,56 @@ activity_list <- activity_list_a[-c(3,7,8)] %>%
 activity_list <- append(activity_list, activity_list_a[c(3,7,8)])
   
 
-folder_path <- "data/ltcs/"
+folder_path <- "reports/nwl_ina_2025/data/ltcs/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 ltcs_list <- map(csv_files, read_csv)
 names(ltcs_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-folder_path <- "data/outcomes/"
+folder_path <- "reports/nwl_ina_2025/data/outcomes/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 outcomes_list <- map(csv_files, read_csv)
 names(outcomes_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-folder_path <- "data/mmb/"
+folder_path <- "reports/nwl_ina_2025/data/mmb/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 mmb_list <- map(csv_files, read_csv)
 names(mmb_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-folder_path <- "data/fingertips/unmet_need/nwl_icb/"
+folder_path <- "reports/nwl_ina_2025/data/fingertips/unmet_need/nwl_icb/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 nwl_need_list <- map(csv_files, read_csv)
 names(nwl_need_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-folder_path <- "data/fingertips/unmet_need/comparison/"
+folder_path <- "reports/nwl_ina_2025/data/fingertips/unmet_need/comparison/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 london_need_list <- map(csv_files, read_csv)
 names(london_need_list) <- tools::file_path_sans_ext(basename(csv_files))
 
 
-folder_path <- "data/fingertips/unmet_need/borough/"
+folder_path <- "reports/nwl_ina_2025/data/fingertips/unmet_need/borough/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 borough_need_list <- map(csv_files, read_csv)
 names(borough_need_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-folder_path <- "data/fingertips/behaviours/"
+folder_path <- "reports/nwl_ina_2025/data/fingertips/behaviours/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 behaviours_list <- map(csv_files, read_csv)
 names(behaviours_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-folder_path <- "data/behaviours/"
+folder_path <- "reports/nwl_ina_2025/data/behaviours/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 behaviours_wisc_list <- map(csv_files, read_csv)
 names(behaviours_wisc_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-imd <- readxl::read_excel("data/imd/File_2_-_IoD2019_Domains_of_Deprivation.xlsx", sheet = 2) %>% 
+imd <- readxl::read_excel( "reports/nwl_ina_2025/data/imd/File_2_-_IoD2019_Domains_of_Deprivation.xlsx", sheet = 2) %>% 
   janitor::clean_names()
 
 ```
@@ -383,7 +385,7 @@ p5 <- demographics_list$nwl_wd_first_language_snomed_term_summary %>%
 
 ## Health Status in North West London
 
-Life expectancy in North West London is still recovering from the impact of COVID-19, while healthy life expectancy has remained relatively stable. There is significant variation across the region. Communities experiencing higher levels of deprivation tend to have both lower life expectancy and lower healthy life expectancy. As a result, people in these areas are likely to spend a greater proportion of their lives in poor health. However, the gap in overall life expectancy hasn’t always fallen to the same extent as healthy life expectancy. That means they often spend more years in poor health compared with those in more affluent areas [ONS, 2022](file:///C:/Users/chrrac/Downloads/Health%20state%20life%20expectancies%20by%20national%20deprivation%20deciles,%20England%202018%20to%202020%20(1).pdf).
+Life expectancy in North West London is still recovering from the impact of COVID-19, while healthy life expectancy has remained relatively stable. There is significant variation across the region. Communities experiencing higher levels of deprivation tend to have both lower life expectancy and lower healthy life expectancy. As a result, people in these areas are likely to spend a greater proportion of their lives in poor health. However, the gap in overall life expectancy hasn’t always fallen to the same extent as healthy life expectancy. That means they often spend more years in poor health compared with those in more affluent areas [ONS, 2022](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthinequalities/bulletins/healthylifeexpectancybynationalareadeprivationenglandandwales/between2013to2015and2020to2022).
 
 ### Life expectancy
 
@@ -392,7 +394,7 @@ Life expectancy in North West London is still recovering from the impact of COVI
 #| error: false
 #fingertips_profiles <-  profiles(proxy_settings = "none")
 
-folder_path <- "data/fingertips/health_status/"
+folder_path <- "reports/nwl_ina_2025/data/fingertips/health_status/"
 
 life_expectancy_msoa <- read.csv(paste0(folder_path, "life_expectancy_msoa.csv"))
 life_expectancy_lad <- read.csv(paste0(folder_path, "life_expectancy_lad.csv"))
@@ -594,13 +596,13 @@ Overall, NWL has a healthier population that the England average, with less peop
 
 ```{r healthlife}
 
-hle_deprivation <- read.csv("data/life_expectancy/healthy_life_deprivation.csv") %>%
+hle_deprivation <- read.csv( "reports/nwl_ina_2025/data/life_expectancy/healthy_life_deprivation.csv") %>%
   janitor::clean_names()
 
-hle_ethnicity <- read.csv("data/life_expectancy/healthy_life_ethnicity.csv") %>%
+hle_ethnicity <- read.csv( "reports/nwl_ina_2025/data/life_expectancy/healthy_life_ethnicity.csv") %>%
   janitor::clean_names() 
 
-hle_df <-  read.csv("data/life_expectancy/healthy_life.csv")
+hle_df <-  read.csv( "reports/nwl_ina_2025/data/life_expectancy/healthy_life.csv")
 
 ```
 
@@ -775,7 +777,7 @@ plot
 
 #| echo: false
 #| error: false
-folder_path <- "data/wdoh/"
+folder_path <- "reports/nwl_ina_2025/data/wdoh/"
 csv_files <- list.files(path = folder_path, pattern = "\\.csv$", full.names = TRUE)
 
 wdoh_list <- map(csv_files, read_csv)
@@ -1954,7 +1956,7 @@ Comparative analyses show that consultation quality, continuity of care, and sat
 ::: {.nhs-border}
 ```{r nwl_gp_activity, fig.width=12, fig.height=8}
 
-gp_activity <- read.csv("data/activity/gp_activty_national.csv")
+gp_activity <- read.csv( "reports/nwl_ina_2025/data/activity/gp_activty_national.csv")
 
 
 gp_activity %>% 

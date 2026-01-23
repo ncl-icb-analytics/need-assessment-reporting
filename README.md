@@ -27,6 +27,6 @@ This repository is used for publishing West and North London ICB reports. This a
 
 Everything in docs/ is deployed from the main branch.
 
-## Licensing 
+## Licensing
 
 This repository is dual licensed under the Open Government v3 & MIT. All code can outputs are subject to Crown Copyright.

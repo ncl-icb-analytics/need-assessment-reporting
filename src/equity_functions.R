@@ -3,10 +3,10 @@
 # Setup -------------------------------------------------------------------
 # Packages
 library(pacman)
-pacman::p_load("dplyr", "janitor", "ggplot2")
+pacman::p_load("dplyr", "janitor", "ggplot2", "here")
 # Setup scripts
 #source("C:/nhs-nwl-icb-health-equity/src/data_cleaning.R")
-source("C:/nhs-nwl-icb-health-equity/src/plot_theme.R")
+source(here("src/plot_theme.R"))
 
 
 # Functions ---------------------------------------------------------------
